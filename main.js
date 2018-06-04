@@ -15,7 +15,7 @@ console.log("javascript running & ready to code! :D");
 //set an array with the word(s) that will be guessed
 const answerKey = ["testing"];
 //create an input field and a button to submit a guess from the user
-const guesses = [];
+let guesses = [];
 //create event listenener for when submit button is clicked-input the letter input into the array
 const button = document.querySelector("button");
 const guessLetter = document.querySelector("#letter-guess");
@@ -23,4 +23,6 @@ const guessLetter = document.querySelector("#letter-guess");
 guessLetter.addEventListener("click", evt => {
     evt.preventDefault();
     console.log("testing the click!");
+    guesses = guess.value;
+    console.log(guesses);
 });
