@@ -48,17 +48,11 @@ guessLetter.addEventListener("click", evt => {
 //letter contained within the string
 function checkLetter() {
   console.log(letterArray);
-  // let check = letterArray.includes(guesses)[0];
-  // if (check !== true) {
-  //   console.log("no match!");
-  // } else {
-  //   console.log("you found a match!");
-  // }
-  letterArray.forEach(element => {
-    if (letterArray.includes(guesses)[0]) {
+  for (let i = 0; i < letterArray.length; i++) {
+    if (guesses[0] === letterArray[i]) {
       console.log("you found a match!");
     } else {
-      console.log("no match!");
+      console.log("this letter does not match");
     }
-  });
+  }
 }
