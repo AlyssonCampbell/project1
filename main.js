@@ -24,6 +24,7 @@ const wordArray = ["abcdef"];
 let guesses = [];
 let letterArray = [];
 let totalScore = [0];
+let indices = [];
 
 //create function to pick a word from the word array, then split it into
 //a new array with each character separated
@@ -64,11 +65,14 @@ function checkLetter() {
       console.log("you found a match!");
       totalScore = parseInt(totalScore + 1);
       console.log(totalScore);
+      //displayLetter();
       function displayLetter() {
-        // let arrayIndex = (letterArray.findIndex(checkLetter));
-        document.querySelector(".letter-display").innerText += letterArray[i];
+        for (var i = 0; i < letterArray.length; i++) {
+          if (letterArray[i] === guesses) indices.push(i);
+        }
+        displayLetter();
       }
-      displayLetter();
+      console.log(indices);
     } else {
       console.log("this letter does not match");
     }
@@ -98,3 +102,9 @@ function checkLetter() {
 //   letterArray.findIndex(letterArray);
 //   document.querySelector(".letter-display").innerText += letterArray[0];
 // }
+
+// letterArray.forEach(element => {
+//   let arrayIndex = letterArray.findIndex(checkLetter);
+//   document.querySelector(".letter-display").nextElementSibling.innerText +=
+//     letterArray[i];
+// });
