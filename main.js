@@ -5,8 +5,8 @@
 //do this maybe with a style/switch?
 //when the complete string has been input by the user
 //then give an alert or some other indication that the user won
-
-//additional pseudocode for how to compare input to array
+//after MVP complete-add a "letters guessed" input area in the HTML
+//add a
 
 // Run a for loop to generate boxes for the game pieces based on the array length of the word chosen
 // Within the click function run another for loop that searches the chosen word array for the guesses letter
@@ -22,6 +22,7 @@ const wordArray = ["abcdef"];
 //create an input field and a button to submit a guess from the user
 let guesses = [];
 let letterArray = [];
+let totalScore = [0];
 
 //create function to pick a word from the word array, then split it into
 //a new array with each character separated
@@ -51,6 +52,10 @@ function checkLetter() {
   for (let i = 0; i < letterArray.length; i++) {
     if (guesses[0] === letterArray[i]) {
       console.log("you found a match!");
+      totalScore = parseInt(totalScore + 1);
+      console.log(totalScore);
+    } else if {
+      
     } else {
       console.log("this letter does not match");
     }
