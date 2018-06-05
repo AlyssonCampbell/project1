@@ -26,8 +26,7 @@ let letterArray = [];
 //create function to pick a word from the word array, then split it into
 //a new array with each character separated
 function makeLetterArray(wordArray) {
-  let letterArray = wordArray.split("");
-  console.log(letterArray);
+  letterArray = wordArray.split("");
 }
 makeLetterArray(wordArray[0]);
 
@@ -42,15 +41,24 @@ guessLetter.addEventListener("click", evt => {
   guesses.pop(guess.value);
   guesses.push(guess.value);
   console.log(guesses);
-  checkLetter(letterArray, guesses[0]);
-  checkLetter();
+  checkLetter(letterArray, guesses);
 });
 
 //create function to compare each letter input to the answer array and see if a letter input is a
 //letter contained within the string
-function checkLetter(letterArray, guesses) {
+function checkLetter() {
+  console.log(letterArray);
+  // let check = letterArray.includes(guesses)[0];
+  // if (check !== true) {
+  //   console.log("no match!");
+  // } else {
+  //   console.log("you found a match!");
+  // }
   letterArray.forEach(element => {
-    if (letterArray == guesses) console.log("match!");
-    return true;
+    if (letterArray.includes(guesses)[0]) {
+      console.log("you found a match!");
+    } else {
+      console.log("no match!");
+    }
   });
 }
