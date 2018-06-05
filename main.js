@@ -9,10 +9,19 @@
 //when the complete string has been input by the user
 //then give an alert or some other indication that the user won
 
+//additional pseudocode for how to compare input to array
+// Make an array of words
+// Make another array for the selected word broken into just letters
+// Run a for loop to generate boxes for the game pieces based on the array length of the word chosen
+// Within the click function run another for loop that searches the chosen word array for the guesses letter
+// If the guesses letter is found-add the class to that tile to display the letter found
+// If not found give a sorry try again message for testing
+
 console.log("javascript running & ready to code! :D");
 
 //set an array with the word(s) that will be guessed
-const answerKey = ["abcdef"];
+const wordArray = ["abcdef"];
+let letterArray = [];
 //create an input field and a button to submit a guess from the user
 let guesses = [];
 //create event listenener for when submit button is clicked-input the letter input
@@ -26,14 +35,15 @@ guessLetter.addEventListener("click", evt => {
   guesses.pop(guess.value);
   guesses.push(guess.value);
   console.log(guesses);
-  checkLetter(answerKey, guesses[0]);
+  checkLetter(letterArray, guesses[0]);
+  checkLetter();
 });
 
 //create function to compare each letter input to the answer array and see if a letter input is a
 //letter contained within the string
 function checkLetter(answerKey, guesses) {
-  for (var i = 0; i < answerKey.length; i++) {
-    if (answerKey[i] == guesses) console.log("match!");
+  for (var i = 0; i < letterArray.length; i++) {
+    if (letterArray[i] == guesses) console.log("match!");
     return true;
   }
 }
