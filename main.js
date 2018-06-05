@@ -54,10 +54,15 @@ function checkLetter() {
       console.log("you found a match!");
       totalScore = parseInt(totalScore + 1);
       console.log(totalScore);
-    } else if {
-      
     } else {
       console.log("this letter does not match");
     }
   }
+  //function to check if the answer is right using total score
+  function checkWord() {
+    if (totalScore === letterArray.length) {
+      console.log("you win!");
+    }
+  }
+  checkWord();
 }
