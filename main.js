@@ -1,7 +1,4 @@
 //what I need to do to get the hangman game running:
-//set an array with the word(s) that will be guessed
-//create an input field and a button to submit a guess from the user
-//create a second array where the user input letter will be stored
 //compare each input with all of the letters within the string in the array
 //if the letter input within the field matches any of the letters in the answer
 //then change the blank image with the ___ to the letter to display
@@ -22,9 +19,18 @@ console.log("javascript running & ready to code! :D");
 // Make an array of words
 const wordArray = ["abcdef"];
 // Make another array for the selected word broken into just letters
-let letterArray = [];
 //create an input field and a button to submit a guess from the user
 let guesses = [];
+let letterArray = [];
+
+//create function to pick a word from the word array, then split it into
+//a new array with each character separated
+function makeLetterArray(wordArray) {
+  let letterArray = wordArray.split("");
+  console.log(letterArray);
+}
+makeLetterArray(wordArray[0]);
+
 //create event listenener for when submit button is clicked-input the letter input
 //into the guesses array
 //don't need to store the guesses within the array since each letter will be compared indivudually
@@ -42,13 +48,9 @@ guessLetter.addEventListener("click", evt => {
 
 //create function to compare each letter input to the answer array and see if a letter input is a
 //letter contained within the string
-function checkLetter(answerKey, guesses) {
+function checkLetter(letterArray, guesses) {
   letterArray.forEach(element => {
     if (letterArray == guesses) console.log("match!");
     return true;
   });
 }
-
-//create function to pick a word from the word array, then split it into
-//a new array with each character separated
-function createLetterArray(wordArray, letterArray) {}
