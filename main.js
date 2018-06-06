@@ -18,13 +18,14 @@ console.log("javascript running & ready to code! :D");
 
 //set an array with the word(s) that will be guessed
 // Make an array of words
-const wordArray = ["follow"];
+const wordArray = ["abcdef"];
 // Make another array for the selected word broken into just letters
 //create an input field and a button to submit a guess from the user
 let guesses = [];
 let letterArray = [];
 let totalScore = [0];
 let indices = [];
+let wrongLetters = [];
 
 //create function to pick a word from the word array, then split it into
 //a new array with each character separated
@@ -43,9 +44,15 @@ for (let index = 0; index < letterArray.length; index++) {
   boxes.innerText = "  ";
 }
 
+//create array to display the incorrect letters input
+//using similar code from the letter displau
+
 //create event listenener for when submit button is clicked-input the letter input
 //into the guesses array
 //don't need to store the guesses within the array since each letter will be compared indivudually
+//moved function within the check letter function to run at same time so it could
+//use the same words
+
 const button = document.querySelector("button");
 const guessLetter = document.querySelector("#letter-guess");
 
@@ -53,39 +60,36 @@ guessLetter.addEventListener("click", evt => {
   evt.preventDefault();
   guesses.pop(guess.value);
   guesses.push(guess.value);
-  console.log(guesses);
+  console.log("guessed letter", guesses);
   checkLetter(letterArray, guesses);
 });
 
 //compare each input with all of the letters within the string in the array
 function checkLetter() {
-  console.log(letterArray);
+  console.log("this is the letter array", letterArray);
+  if (letterArray.includes(guesses[0]) == false) {
+    wrongLetters.pop(guesses[0]);
+    wrongLetters.push(guesses[0]);
+    console.log("this letter does not match any letter in the word");
+    console.log("not a letter", wrongLetters);
+    const incorrectChoices = document.getElementById("#wrongLetters");
+    let incorrect = document.createElement("div");
+    incorrect.setAttribute("class", "wrong-letter");
+    document.querySelector(".wrong").appendChild(incorrect);
+    console.log("wrong letter array:", wrongLetters);
+    incorrect.innerText = wrongLetters;
+
+    return;
+  }
   for (let i = 0; i < letterArray.length; i++) {
     if (guesses[0] === letterArray[i]) {
       console.log("you found a match!");
       totalScore = parseInt(totalScore + 1);
-      console.log(totalScore);
+      console.log("total score", totalScore);
       letterArray[i] === guesses;
       indices.push(i);
-      console.log(indices);
-      //grab boxes from ther dom
-      //find the index of all of the letter array that it matches
-      //once found set inner text of boxes to the letters
-      function showLetter() {
-        //   const newBox = document.createElement("div");
-        //   newBox.setAttribute("id", "showing");
-        //   document.getElementsByClassName("letters")[i].appendChild(newBox);
-        //   let correctLetter = guesses;
-        //   let blankBoxes = document.getElementsByClassName(".letter-display");
-        //   blankBoxes.appendChild(correctLetter).innerText;
-        //
-        let boxes = document.getElementsByClassName("letter-display");
-        let newBoxes = letterArray[i];
-        boxes.replaceChild(newBoxes).innerText;
-      }
-      showLetter();
-    } else {
-      console.log("this letter does not match");
+      console.log("index number", indices);
+      // showLetter();
     }
   }
   //function to check if the answer is right using total score
@@ -97,3 +101,25 @@ function checkLetter() {
   }
   checkWord();
 }
+
+//grab boxes from ther dom
+//find the index of all of the letter array that it matches
+//once found set inner text of boxes to the letters
+// function showLetter() {
+//   // const newBox = document.createElement("div");
+//   // newBox.setAttribute("id", "showing");
+//   // document.getElementsByClassName("letters")[i].appendChild(newBox);
+//   // let correctLetter = guesses;
+//   // let blankBoxes = document.getElementsByClassName(".letter-display");
+//   // blankBoxes.appendChild(correctLetter).innerText.letterArray[i];
+//   let newBoxes = document.getElementsByClassName("letter-display");
+//   let letters = document.getElementById("letterSpace");
+//   letters.forEach(boxes => {
+//     let letter = document.createElement("letter");
+//     li.innerText = test;
+//     letter.appendChild(li);
+//     letter.classList.add(letter.toUpperCase().replace(" ", ""));
+//     letters.appendChild(letter);
+//   });
+//   body.appendChild(newBoxes);
+// }

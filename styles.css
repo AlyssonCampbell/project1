@@ -10,5 +10,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
     background: aliceblue;
+}
 
+.wrong {
+    display: inline-block;
+    text-align: center;
 }
