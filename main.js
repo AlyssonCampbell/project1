@@ -18,7 +18,7 @@ console.log("javascript running & ready to code! :D");
 
 //set an array with the word(s) that will be guessed
 // Make an array of words
-const wordArray = ["potato"];
+const wordArray = ["asdf"];
 // Make another array for the selected word broken into just letters
 //create an input field and a button to submit a guess from the user
 let guesses = [];
@@ -60,7 +60,6 @@ guessLetter.addEventListener("click", evt => {
   evt.preventDefault();
   guesses.pop(guess.value);
   guesses.push(guess.value);
-  console.log("guessed letter", guesses);
   checkLetter(letterArray, guesses);
 });
 
@@ -70,21 +69,16 @@ function checkLetter() {
   if (letterArray.includes(guesses[0]) == false) {
     wrongLetters.pop(guesses[0]);
     wrongLetters.push(guesses[0]);
-    console.log("this letter does not match any letter in the word");
-    console.log("not a letter", wrongLetters);
     const incorrectChoices = document.getElementById("#wrongLetters");
     let incorrect = document.createElement("div");
     incorrect.setAttribute("class", "wrong-letter");
     document.querySelector(".wrong").appendChild(incorrect);
-    console.log("wrong letter array:", wrongLetters);
     incorrect.innerText = wrongLetters;
     return;
   }
   for (let i = 0; i < letterArray.length; i++) {
     if (guesses[0] === letterArray[i]) {
-      console.log("you found a match!");
       totalScore = parseInt(totalScore + 1);
-      console.log("total score", totalScore);
       letterArray[i] === guesses;
       indices.pop(i);
       indices.push(i);
@@ -96,7 +90,7 @@ function checkLetter() {
   //then give an alert or some other indication that the user won
   function checkWord() {
     if (totalScore === letterArray.length) {
-      console.log("you win!");
+      alert("you win!");
     }
   }
   checkWord();
@@ -112,6 +106,5 @@ function showLetter() {
   let letterAnswer = document.createTextNode("testing");
   newLetter.appendChild(letterAnswer);
   let blanks = document.getElementsByClassName("letter-display")[indices];
-  console.log(blanks);
   blanks.innerText = guesses;
 }
