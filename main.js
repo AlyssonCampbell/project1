@@ -78,7 +78,6 @@ function checkLetter() {
     document.querySelector(".wrong").appendChild(incorrect);
     console.log("wrong letter array:", wrongLetters);
     incorrect.innerText = wrongLetters;
-
     return;
   }
   for (let i = 0; i < letterArray.length; i++) {
@@ -89,7 +88,7 @@ function checkLetter() {
       letterArray[i] === guesses;
       indices.push(i);
       console.log("index number", indices);
-      // showLetter();
+      showLetter();
     }
   }
   //function to check if the answer is right using total score
@@ -105,21 +104,10 @@ function checkLetter() {
 //grab boxes from ther dom
 //find the index of all of the letter array that it matches
 //once found set inner text of boxes to the letters
-// function showLetter() {
-//   // const newBox = document.createElement("div");
-//   // newBox.setAttribute("id", "showing");
-//   // document.getElementsByClassName("letters")[i].appendChild(newBox);
-//   // let correctLetter = guesses;
-//   // let blankBoxes = document.getElementsByClassName(".letter-display");
-//   // blankBoxes.appendChild(correctLetter).innerText.letterArray[i];
-//   let newBoxes = document.getElementsByClassName("letter-display");
-//   let letters = document.getElementById("letterSpace");
-//   letters.forEach(boxes => {
-//     let letter = document.createElement("letter");
-//     li.innerText = test;
-//     letter.appendChild(li);
-//     letter.classList.add(letter.toUpperCase().replace(" ", ""));
-//     letters.appendChild(letter);
-//   });
-//   body.appendChild(newBoxes);
-// }
+function showLetter() {
+  let oldBoxes = document.getElementById("#letterSpace");
+  let newBoxes = document.createElement("div");
+  newBoxes.setAttribute("class", "correct-letter");
+  document.querySelector(".letter-display").replaceChild(guesses);
+  newBoxes.innerText = guesses.toUpperCase();
+}
