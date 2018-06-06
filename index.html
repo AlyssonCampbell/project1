@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>hangman game</title>
+    <link href="https://fonts.googleapis.com/css?family=Cute+Font" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>testing 123...</h1>
+    <h1>can you guess the password?...</h1>
+    <h2>try to guess before the loading bar fills!</h2>
     <div class="letters" id="letterSpace"></div>
     <div class="guess">
-        <input type="text" id="guess" placeholder="Guess a new letter"></input>
-        <button id="letter-guess">Guess!</button>
+        <input type="text" id="guess">
+        <br>
+        <button id="letter-guess">Guess a new letter!</button>
     </div>
     <br>
     <div class="wrong" id="wrongLetters">Wrong Letters Already Guessed:

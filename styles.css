@@ -1,5 +1,33 @@
 body {
     text-align: center;
+    font-family: 'Cute Font', cursive;
+    font-size: 40px;
+    color: #c4f791;
+    background-image: url("images/background.jpg")
+}
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+input {
+    font-family: 'Cute Font', cursive;
+    font-size: 30px;
+    text-align: center;
+    color: #c4f791;
+    background: transparent;
+    border: solid #c4f791 1px;
+    width: 50px;
+}
+
+button {
+    font-family: 'Cute Font', cursive;
+    font-size: 20px;
+    text-align: center;
 }
 
 .letters {
@@ -10,10 +38,11 @@ body {
 .letter-display {
     vertical-align: top;
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 70px;
+    height: 70px;
     margin-left: 10px;
-    background: aliceblue;
+    background: transparent;
+    border-bottom: 2px solid #c4f791;
 }
 
 .wrong-letter {
