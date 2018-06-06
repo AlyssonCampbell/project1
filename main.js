@@ -18,7 +18,7 @@ console.log("javascript running & ready to code! :D");
 
 //set an array with the word(s) that will be guessed
 // Make an array of words
-const wordArray = ["abcdef"];
+const wordArray = ["follow"];
 // Make another array for the selected word broken into just letters
 //create an input field and a button to submit a guess from the user
 let guesses = [];
@@ -37,7 +37,7 @@ makeLetterArray(wordArray[0]);
 //pieces based on the array length of the word chosen
 const letterDisplay = document.querySelector(".letters");
 for (let index = 0; index < letterArray.length; index++) {
-  let boxes = document.createElement("div");
+  let boxes = document.createElement("li");
   boxes.setAttribute("class", "letter-display");
   document.querySelector(".letters").appendChild(boxes);
   boxes.innerText = "  ";
@@ -68,6 +68,22 @@ function checkLetter() {
       letterArray[i] === guesses;
       indices.push(i);
       console.log(indices);
+      //grab boxes from ther dom
+      //find the index of all of the letter array that it matches
+      //once found set inner text of boxes to the letters
+      function showLetter() {
+        //   const newBox = document.createElement("div");
+        //   newBox.setAttribute("id", "showing");
+        //   document.getElementsByClassName("letters")[i].appendChild(newBox);
+        //   let correctLetter = guesses;
+        //   let blankBoxes = document.getElementsByClassName(".letter-display");
+        //   blankBoxes.appendChild(correctLetter).innerText;
+        //
+        let boxes = document.getElementsByClassName("letter-display");
+        let newBoxes = letterArray[i];
+        boxes.replaceChild(newBoxes).innerText;
+      }
+      showLetter();
     } else {
       console.log("this letter does not match");
     }
@@ -81,25 +97,3 @@ function checkLetter() {
   }
   checkWord();
 }
-
-// const letterDisplay = document.querySelector(".letters");
-// for (let index = 0; index < letterArray.length; index++) {
-//   let boxes = document.createElement("div");
-//   boxes.setAttribute("class", "letter-display");
-//   document.querySelector(".letters").appendChild(boxes);
-//   boxes.innerText = "  ";
-// }
-//grab boxes from ther dom
-//find the index of all of the letter array that it matches
-//once found set inner text of boxes to the letters
-// .innerText
-// function displayLetter() {
-//   letterArray.findIndex(letterArray);
-//   document.querySelector(".letter-display").innerText += letterArray[0];
-// }
-
-// letterArray.forEach(element => {
-//   let arrayIndex = letterArray.findIndex(checkLetter);
-//   document.querySelector(".letter-display").nextElementSibling.innerText +=
-//     letterArray[i];
-// });
