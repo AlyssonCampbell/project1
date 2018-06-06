@@ -65,13 +65,8 @@ function checkLetter() {
       console.log("you found a match!");
       totalScore = parseInt(totalScore + 1);
       console.log(totalScore);
-      //displayLetter();
-      function displayLetter() {
-        for (var i = 0; i < letterArray.length; i++) {
-          if (letterArray[i] === guesses) indices.push(i);
-        }
-        displayLetter();
-      }
+      letterArray[i] === guesses;
+      indices.push(i);
       console.log(indices);
     } else {
       console.log("this letter does not match");
