@@ -18,7 +18,7 @@ console.log("javascript running & ready to code! :D");
 
 //set an array with the word(s) that will be guessed
 // Make an array of words
-const wordArray = ["abcdef"];
+const wordArray = ["potato"];
 // Make another array for the selected word broken into just letters
 //create an input field and a button to submit a guess from the user
 let guesses = [];
@@ -38,7 +38,7 @@ makeLetterArray(wordArray[0]);
 //pieces based on the array length of the word chosen
 const letterDisplay = document.querySelector(".letters");
 for (let index = 0; index < letterArray.length; index++) {
-  let boxes = document.createElement("li");
+  let boxes = document.createElement("div");
   boxes.setAttribute("class", "letter-display");
   document.querySelector(".letters").appendChild(boxes);
   boxes.innerText = "  ";
@@ -86,6 +86,7 @@ function checkLetter() {
       totalScore = parseInt(totalScore + 1);
       console.log("total score", totalScore);
       letterArray[i] === guesses;
+      indices.pop(i);
       indices.push(i);
       console.log("index number", indices);
       showLetter();
@@ -104,10 +105,13 @@ function checkLetter() {
 //grab boxes from ther dom
 //find the index of all of the letter array that it matches
 //once found set inner text of boxes to the letters
+
 function showLetter() {
-  let oldBoxes = document.getElementById("#letterSpace");
-  let newBoxes = document.createElement("div");
-  newBoxes.setAttribute("class", "correct-letter");
-  document.querySelector(".letter-display").replaceChild(guesses);
-  newBoxes.innerText = guesses.toUpperCase();
+  let newLetter = document.createElement("div");
+  newLetter.class = "answers";
+  let letterAnswer = document.createTextNode("testing");
+  newLetter.appendChild(letterAnswer);
+  let blanks = document.getElementsByClassName("letter-display")[indices];
+  console.log(blanks);
+  blanks.innerText = guesses;
 }
