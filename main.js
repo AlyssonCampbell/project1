@@ -61,6 +61,7 @@ guessLetter.addEventListener("click", evt => {
   guesses.pop(guess.value);
   guesses.push(guess.value);
   checkLetter(letterArray, guesses);
+
 });
 
 //compare each input with all of the letters within the string in the array
@@ -94,6 +95,8 @@ function checkLetter() {
     }
   }
   checkWord();
+  // let input = document.getElementById("guess");
+  // input.reset("");
 }
 
 //grab boxes from ther dom
@@ -104,3 +107,11 @@ function showLetter() {
   let blanks = document.getElementsByClassName("letter-display")[indices];
   blanks.innerText = guesses;
 }
+
+//add function for loading bar to show game over
+
+
+//make function for changing alert to something nicer for the you win
+
+
+//figure out way to reset the letter field on enter
