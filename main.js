@@ -41,7 +41,7 @@ for (let index = 0; index < letterArray.length; index++) {
   let boxes = document.createElement("div");
   boxes.setAttribute("class", "letter-display");
   document.querySelector(".letters").appendChild(boxes);
-  boxes.innerText = "  ";
+  boxes.innerText = "";
 }
 
 //create array to display the incorrect letters input
@@ -101,10 +101,6 @@ function checkLetter() {
 //once found set inner text of boxes to the letters
 
 function showLetter() {
-  let newLetter = document.createElement("div");
-  newLetter.class = "answers";
-  let letterAnswer = document.createTextNode("testing");
-  newLetter.appendChild(letterAnswer);
   let blanks = document.getElementsByClassName("letter-display")[indices];
   blanks.innerText = guesses;
 }
