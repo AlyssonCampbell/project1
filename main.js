@@ -18,7 +18,7 @@ console.log("javascript running & ready to code! :D");
 
 //set an array with the word(s) that will be guessed
 // Make an array of words
-const wordArray = ["asdf"];
+const wordArray = ["password"];
 // Make another array for the selected word broken into just letters
 //create an input field and a button to submit a guess from the user
 let guesses = [];
@@ -26,6 +26,14 @@ let letterArray = [];
 let totalScore = [0];
 let indices = [];
 let wrongLetters = [];
+let wrongAnswers = [];
+// let pickedWord = [];
+
+// function pickWord(wordArray) {
+//   pickedWord.pop(Math.floor(Math.random() * wordArray));
+// }
+// pickWord();
+// console.log(pickedWord);
 
 //create function to pick a word from the word array, then split it into
 //a new array with each character separated
@@ -61,13 +69,13 @@ guessLetter.addEventListener("click", evt => {
   guesses.pop(guess.value);
   guesses.push(guess.value);
   checkLetter(letterArray, guesses);
-
 });
 
 //compare each input with all of the letters within the string in the array
 function checkLetter() {
   console.log("this is the letter array", letterArray);
   if (letterArray.includes(guesses[0]) == false) {
+    wrongAnswers = parseInt(wrongAnswers + 1);
     wrongLetters.pop(guesses[0]);
     wrongLetters.push(guesses[0]);
     const incorrectChoices = document.getElementById("#wrongLetters");
@@ -95,8 +103,20 @@ function checkLetter() {
     }
   }
   checkWord();
-  // let input = document.getElementById("guess");
-  // input.reset("");
+
+  // function gameOver() {
+  //   if ((wrongAnswers === 6) == true) {
+  //     alert("game over!");
+  //   }
+  //   wrongAnswers;
+  // }
+  // gameOver();
+  // console.log(wrongAnswers);
+
+  // function reset() {
+  //   let field = document.getElementById("guess");
+  //   field.innerText = "";
+  // }
 }
 
 //grab boxes from ther dom
@@ -110,8 +130,6 @@ function showLetter() {
 
 //add function for loading bar to show game over
 
-
 //make function for changing alert to something nicer for the you win
-
 
 //figure out way to reset the letter field on enter

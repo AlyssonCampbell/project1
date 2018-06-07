@@ -2,7 +2,7 @@ body {
     text-align: center;
     font-family: 'Cute Font', cursive;
     font-size: 40px;
-    color: #c4f791;
+    color: #c6f298;
     background-image: url("images/background.jpg")
 }
 
@@ -16,11 +16,11 @@ h2 {
 
 input {
     font-family: 'Cute Font', cursive;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
-    color: #c4f791;
+    color: #c6f298;
     background: transparent;
-    border: solid #c4f791 1px;
+    border: solid #c6f298 1px;
     width: 50px;
 }
 
@@ -28,6 +28,9 @@ button {
     font-family: 'Cute Font', cursive;
     font-size: 20px;
     text-align: center;
+    background: #364c25;
+    color: #c6f298;
+    border: none;
 }
 
 .letters {
@@ -42,7 +45,7 @@ button {
     height: 70px;
     margin-left: 10px;
     background: transparent;
-    border-bottom: 2px solid #c4f791;
+    border-bottom: 2px solid #c6f298;
 }
 
 .wrong-letter {
