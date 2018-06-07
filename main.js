@@ -12,7 +12,7 @@
 //the blank letter fields for the letters to be guessed
 //the letters already guessed
 //the number of incorrect guesses
-//can display each letter, if the letter displayed is not included, style it red
+
 
 console.log("javascript running & ready to code! :D");
 
