@@ -26,7 +26,7 @@ let letterArray = [];
 let totalScore = [0];
 let indices = [];
 let wrongLetters = [];
-let wrongAnswers = [];
+let wrongAnswers = [6];
 // let pickedWord = [];
 
 // function pickWord(wordArray) {
@@ -75,7 +75,7 @@ guessLetter.addEventListener("click", evt => {
 function checkLetter() {
   console.log("this is the letter array", letterArray);
   if (letterArray.includes(guesses[0]) == false) {
-    wrongAnswers = parseInt(wrongAnswers + 1);
+    wrongAnswers = parseInt(wrongAnswers - 1);
     wrongLetters.pop(guesses[0]);
     wrongLetters.push(guesses[0]);
     const incorrectChoices = document.getElementById("#wrongLetters");
@@ -83,6 +83,14 @@ function checkLetter() {
     incorrect.setAttribute("class", "wrong-letter");
     document.querySelector(".wrong").appendChild(incorrect);
     incorrect.innerText = wrongLetters;
+    console.log(wrongAnswers);
+
+    function gameOver() {
+      if (wrongAnswers == 0) {
+        console.log("game over!");
+      }
+    }
+    gameOver();
     return;
   }
   for (let i = 0; i < letterArray.length; i++) {
@@ -91,7 +99,7 @@ function checkLetter() {
       letterArray[i] === guesses;
       indices.pop(i);
       indices.push(i);
-      console.log("index number", indices);
+      console.log("total score", totalScore);
       showLetter();
     }
   }
@@ -104,14 +112,8 @@ function checkLetter() {
   }
   checkWord();
 
-  // function gameOver() {
-  //   if ((wrongAnswers === 6) == true) {
-  //     alert("game over!");
-  //   }
-  //   wrongAnswers;
-  // }
-  // gameOver();
-  // console.log(wrongAnswers);
+
+
 
   // function reset() {
   //   let field = document.getElementById("guess");

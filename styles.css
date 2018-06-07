@@ -1,22 +1,19 @@
+@font-face {
+    font-family: fixedsys;
+    src: url(fonts/FSEX300.ttf);
+}
+
 body {
-    text-align: center;
-    font-family: 'Cute Font', cursive;
-    font-size: 40px;
+    font-family: Fixedsys;
     color: #c6f298;
-    background-image: url("images/background.jpg")
-}
-
-h1 {
-    font-size: 80px;
-}
-
-h2 {
-    font-size: 40px;
+    font-size: 20px;
+    background-image: url("images/falloutbg.jpg");
+    background-size: cover;
 }
 
 input {
-    font-family: 'Cute Font', cursive;
-    font-size: 40px;
+    font-family: Fixedsys;
+    font-size: 20px;
     text-align: center;
     color: #c6f298;
     background: transparent;
@@ -25,12 +22,12 @@ input {
 }
 
 button {
-    font-family: 'Cute Font', cursive;
+    font-family: Fixedsys;
     font-size: 20px;
     text-align: center;
     background: #364c25;
     color: #c6f298;
-    border: none;
+    border: solid #c6f298 1px;
 }
 
 .letters {
@@ -41,9 +38,10 @@ button {
 .letter-display {
     vertical-align: top;
     display: inline-block;
-    width: 70px;
-    height: 70px;
-    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    text-align: center;
     background: transparent;
     border-bottom: 2px solid #c6f298;
 }
