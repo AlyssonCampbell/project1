@@ -69,6 +69,7 @@ guessLetter.addEventListener("click", evt => {
   guesses.pop(guess.value);
   guesses.push(guess.value);
   checkLetter(letterArray, guesses);
+  document.getElementById("guess").value = "";
 });
 
 //compare each input with all of the letters within the string in the array
