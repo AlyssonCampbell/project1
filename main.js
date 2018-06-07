@@ -15,11 +15,22 @@
 
 console.log("javascript running & ready to code! :D");
 //make word bank with all words to choose from for password
-let wordBank = ["password", "wasteland", "nukacola", "fallout"];
+let wordBank = [
+  "password",
+  "wasteland",
+  "nukacola",
+  "fallout",
+  "finalpam",
+  "ghoul",
+  "radroach",
+  "settlement",
+  "nuclear",
+  "jet",
+  "mentat"
+];
 
 //set an array with the word(s) that will be guessed
 // Make an array of words
-// const wordArray = [];
 
 // Make another array for the selected word broken into just letters
 //create an input field and a button to submit a guess from the user
@@ -30,14 +41,14 @@ let indices = [];
 let wrongLetters = [];
 let wrongAnswers = [6];
 
-let wordArray = wordBank[Math.floor(Math.random() * wordBank.length)];
+let wordArray = [wordBank[Math.floor(Math.random() * wordBank.length)]];
 
 console.log("word array", wordArray);
 
 //create function to pick a word from the word array, then split it into
 //a new array with each character separated
 function makeLetterArray(wordArray) {
-  letterArray = wordArray.split(" , ");
+  letterArray = wordArray.split("");
 }
 makeLetterArray(wordArray[0]);
 
