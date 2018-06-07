@@ -5,7 +5,7 @@
 
 body {
     font-family: Fixedsys;
-    color: #c6f298;
+    color: RGBA(0, 255, 102, .75);
     font-size: 20px;
     background-image: url("images/falloutbg.jpg");
     background-size: 100%;
@@ -16,9 +16,9 @@ input {
     font-family: Fixedsys;
     font-size: 20px;
     text-align: center;
-    color: #c6f298;
+    color: RGBA(0, 255, 102, .75);
     background: transparent;
-    border: solid #c6f298 1px;
+    border: solid RGBA(0, 255, 102, .75) 1px;
     width: 50px;
 }
 
@@ -26,9 +26,10 @@ button {
     font-family: Fixedsys;
     font-size: 20px;
     text-align: center;
-    background: #364c25;
-    color: #c6f298;
-    border: solid #c6f298 1px;
+    background: transparent;
+    color: RGBA(0, 255, 102, .75);
+    ;
+    border: solid RGBA(0, 255, 102, .75) 1px;
 }
 
 .letters {
@@ -44,10 +45,18 @@ button {
     margin-left: 5px;
     text-align: center;
     background: transparent;
-    border-bottom: 2px solid #c6f298;
+    border-bottom: 2px solid RGBA(0, 255, 102, .75);
 }
 
 .wrong-letter {
     display: inline-block;
     margin-left: 10px;
+}
+
+img {
+    height: 200px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 0.75;
 }
