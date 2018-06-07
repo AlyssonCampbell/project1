@@ -13,12 +13,14 @@
 //the letters already guessed
 //the number of incorrect guesses
 
-
 console.log("javascript running & ready to code! :D");
+//make word bank with all words to choose from for password
+let wordBank = ["password", "wasteland", "nukacola", "fallout"];
 
 //set an array with the word(s) that will be guessed
 // Make an array of words
-const wordArray = ["password"];
+// const wordArray = [];
+
 // Make another array for the selected word broken into just letters
 //create an input field and a button to submit a guess from the user
 let guesses = [];
@@ -27,18 +29,15 @@ let totalScore = [0];
 let indices = [];
 let wrongLetters = [];
 let wrongAnswers = [6];
-// let pickedWord = [];
 
-// function pickWord(wordArray) {
-//   pickedWord.pop(Math.floor(Math.random() * wordArray));
-// }
-// pickWord();
-// console.log(pickedWord);
+let wordArray = wordBank[Math.floor(Math.random() * wordBank.length)];
+
+console.log("word array", wordArray);
 
 //create function to pick a word from the word array, then split it into
 //a new array with each character separated
 function makeLetterArray(wordArray) {
-  letterArray = wordArray.split("");
+  letterArray = wordArray.split(" , ");
 }
 makeLetterArray(wordArray[0]);
 
@@ -109,7 +108,7 @@ function checkLetter() {
   //create function to count down the number of wrong guesses
   //grab the area the same as the letters but minus the tally
   function wrongLetter(wrongAnswers) {
-    console.log("attempts left", wrongAnswers)
+    console.log("attempts left", wrongAnswers);
     let countdown = document.getElementById("number");
     countdown.innerText = wrongAnswers;
   }
