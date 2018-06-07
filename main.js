@@ -83,14 +83,8 @@ function checkLetter() {
     incorrect.setAttribute("class", "wrong-letter");
     document.querySelector(".wrong").appendChild(incorrect);
     incorrect.innerText = wrongLetters;
-    console.log(wrongAnswers);
-
-    function gameOver() {
-      if (wrongAnswers == 0) {
-        console.log("game over!");
-      }
-    }
-    gameOver();
+    wrongLetter(wrongAnswers);
+    gameOver(wrongAnswers);
     return;
   }
   for (let i = 0; i < letterArray.length; i++) {
@@ -111,27 +105,28 @@ function checkLetter() {
     }
   }
   checkWord();
-
-
-
-
-  // function reset() {
-  //   let field = document.getElementById("guess");
-  //   field.innerText = "";
-  // }
+  //create function to count down the number of wrong guesses
+  //grab the area the same as the letters but minus the tally
+  function wrongLetter(wrongAnswers) {
+    console.log("attempts left", wrongAnswers)
+    let countdown = document.getElementById("number");
+    countdown.innerText = wrongAnswers;
+  }
 }
 
 //grab boxes from ther dom
 //find the index of all of the letter array that it matches
 //once found set inner text of boxes to the letters
-
 function showLetter() {
   let blanks = document.getElementsByClassName("letter-display")[indices];
   blanks.innerText = guesses;
 }
 
-//add function for loading bar to show game over
-
-//make function for changing alert to something nicer for the you win
-
-//figure out way to reset the letter field on enter
+//create a function where if the attempts left hits 0 then game over
+//on game over-reload the page
+function gameOver(wrongAnswers) {
+  if (wrongAnswers == 0) {
+    alert("game over!");
+    location.reload();
+  }
+}
