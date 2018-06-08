@@ -1,4 +1,4 @@
-# project1
+# Variant Hangman Game - Password Guesser
 
 Project 1 - Hangman game
 By: Alysson Campbell
