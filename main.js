@@ -1,18 +1,3 @@
-//what I need to do to get the hangman game running
-//if the letter input within the field matches any of the letters in the answer
-//then change the blank image with the ___ to the letter to display
-//do this maybe with a style/switch?
-
-//after MVP complete-add a "letters guessed" input area in the HTML
-
-// Within the click function run another for loop that searches the chosen word array for the guesses letter
-// If the guesses letter is found-add the class to that tile to display the letter found
-// If not found give a sorry try again message for testing
-//things to display
-//the blank letter fields for the letters to be guessed
-//the letters already guessed
-//the number of incorrect guesses
-
 console.log("javascript running & ready to code! :D");
 //make word bank with all words to choose from for password
 let wordBank = [
@@ -31,7 +16,6 @@ let wordBank = [
 
 //set an array with the word(s) that will be guessed
 // Make an array of words
-
 // Make another array for the selected word broken into just letters
 //create an input field and a button to submit a guess from the user
 let guesses = [];
@@ -116,9 +100,7 @@ function checkLetter() {
         alert("ADMIN ACCESS GRANTED!");
         location.reload();
       }, 1000);
-
     }
-
   }
   checkWord();
   //create function to count down the number of wrong guesses
@@ -146,6 +128,5 @@ function gameOver(wrongAnswers) {
       alert("UNAUTHORIZED USER DETECTED! SYSTEM RESETTING...");
       location.reload();
     }, 1000);
-
   }
 }
