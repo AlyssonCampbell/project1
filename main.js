@@ -92,6 +92,14 @@ function checkLetter() {
       showLetter();
     }
   }
+  //grab boxes from ther dom
+  //find the index of all of the letter array that it matches
+  //once found set inner text of boxes to the letters
+  function showLetter() {
+    let blanks = document.getElementsByClassName("letter-display")[indices];
+    blanks.innerText = guesses;
+  }
+
   //function to check if the answer is right using total score
   //then give an alert or some other indication that the user won
   function checkWord() {
@@ -111,15 +119,6 @@ function checkLetter() {
     countdown.innerText = wrongAnswers;
   }
 }
-
-//grab boxes from ther dom
-//find the index of all of the letter array that it matches
-//once found set inner text of boxes to the letters
-function showLetter() {
-  let blanks = document.getElementsByClassName("letter-display")[indices];
-  blanks.innerText = guesses;
-}
-
 //create a function where if the attempts left hits 0 then game over
 //on game over-reload the page
 function gameOver(wrongAnswers) {
