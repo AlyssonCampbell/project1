@@ -6,7 +6,7 @@
 
 ## Description of project:
 
-![](/images/screenshot.png)
+![](/images/screenshot.PNG)
 
 This is a modified version of the traditional game of hangman. It was created as my first independent project within my General Assembly class(week 4).
 
