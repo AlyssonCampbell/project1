@@ -17,8 +17,6 @@ The theme chosen is based on the hacking terminals within the Bethesda game seri
 
 Vanilla JavaScript is used primarily and code was written in Visual Studio Code.
 
- <img src="images/screenshot.png" alt="screen shot of game">
-
  other than images/names that are copyright Bethesda, all code is copyright Alysson Campbell 2018
 
  Thanks for reading! 
