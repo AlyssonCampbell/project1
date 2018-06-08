@@ -112,8 +112,13 @@ function checkLetter() {
   //then give an alert or some other indication that the user won
   function checkWord() {
     if (totalScore === letterArray.length) {
-      alert("you win!");
+      setTimeout(function () {
+        alert("ADMIN ACCESS GRANTED!");
+        location.reload();
+      }, 1000);
+
     }
+
   }
   checkWord();
   //create function to count down the number of wrong guesses
@@ -137,7 +142,10 @@ function showLetter() {
 //on game over-reload the page
 function gameOver(wrongAnswers) {
   if (wrongAnswers == 0) {
-    alert("game over!");
-    location.reload();
+    setTimeout(function () {
+      alert("UNAUTHORIZED USER DETECTED! SYSTEM RESETTING...");
+      location.reload();
+    }, 1000);
+
   }
 }
