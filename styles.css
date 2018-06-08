@@ -9,7 +9,6 @@ body {
     font-size: 20px;
     background-image: url("images/falloutbg.jpg");
     background-size: 100%;
-    font-weight: 20px;
 }
 
 input {
@@ -45,7 +44,6 @@ button {
     margin-left: 5px;
     text-align: center;
     background: RGBA(0, 255, 102, .75);
-    /* border-bottom: 2px solid RGBA(0, 255, 102, .75); */
     color: rgb(0, 29, 4);
 }
 
@@ -55,16 +53,12 @@ button {
 }
 
 img {
-    height: 200px;
+    height: 300px;
     position: fixed;
     bottom: 0;
     right: 0;
     opacity: 0.75;
 }
-
-/* .number {
-    text-align: center
-} */
 
 p {
     display: inline-block;
