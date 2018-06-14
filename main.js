@@ -1,3 +1,4 @@
+// BJ: make sure to take out your console.logs before deploying
 console.log("javascript running & ready to code! :D");
 //make word bank with all words to choose from for password
 let wordBank = [
@@ -27,7 +28,6 @@ let wrongAnswers = [6];
 
 let wordArray = [wordBank[Math.floor(Math.random() * wordBank.length)]];
 
-console.log("word array", wordArray);
 
 //create function to pick a word from the word array, then split it into
 //a new array with each character separated
@@ -58,12 +58,17 @@ for (let index = 0; index < letterArray.length; index++) {
 const button = document.querySelector("button");
 const guessLetter = document.querySelector("#letter-guess");
 
-guessLetter.addEventListener("click", evt => {
-  evt.preventDefault();
+// BJ: pulling this out into it's own function allows me to DRY up code and make it reusable at another time
+function enterButton(){
   guesses.pop(guess.value);
   guesses.push(guess.value);
   checkLetter(letterArray, guesses);
   document.getElementById("guess").value = "";
+}
+
+guessLetter.addEventListener("click", evt => {
+  evt.preventDefault();
+  enterButton();
 });
 
 //compare each input with all of the letters within the string in the array

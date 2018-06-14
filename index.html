@@ -13,19 +13,25 @@
 <body>
     <h1>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h1>
     <h2>ENTER PASSWORD NOW</h2>
-    <div class="attempt" id="attempt">
+    <!-- BJ: rather than type the html all uppercase, I'd use css to ensure this is always uppercased no matter what the text says -->
+    <div>
         ATTEMPT(S) LEFT:
         <div id="number">6</div>
         <div class="letters" id="letterSpace"></div>
 
         <div class="guess">
+          <!-- BJ: wrapping this in a form allows the user to hit 'enter' to submit their letter -->
+          <form >
             <input type="text" id="guess">
-            <button id="letter-guess">ENTER</button>
+            <button id="letter-guess" type="submit">ENTER</button>
+          </form>
         </div>
         <br>
     </div>
 
     <div class="wrong" id="wrongLetters">Wrong Letters Already Guessed:</div>
+
+    <!-- BJ: This is a good place to implement bootstrap columns so your page design is more responsive -->
     <p>
         <br> 0xF670 ^{_}/)/('(/]
         <br> 0xF67C [>}} FALLOU]
@@ -126,7 +132,7 @@
     <footer>
         <img src="images/pip.png" alt="pipboy">
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- BJ: Since you're not using jquery, you don't need to include this library -->
     <script src="main.js"></script>
 
 </body>

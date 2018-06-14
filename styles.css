@@ -4,12 +4,18 @@
 }
 
 body {
-    font-family: Fixedsys;
+    font-family: Fixedsys, "Courier New", monospace;
+    /*  It's a good idea to add fallback fonts in case the one you're including doesn't load for some reason */
     color: RGBA(0, 255, 102, .75);
     font-size: 20px;
     background-image: url("images/falloutbg.jpg");
     background-size: cover;
     background-position: center;
+    text-transform: uppercase;
+}
+
+.wrong{
+  text-transform: capitalize;
 }
 
 input {

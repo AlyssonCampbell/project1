@@ -26,7 +26,7 @@ Prettier
 
 ## Built With:
 
-Javascript / HTML / CSS
+Javascript (vanilla) / HTML / CSS
 
 ## Details about the concept
 
@@ -34,7 +34,7 @@ Javascript / HTML / CSS
 
 ![](/images/reference.jpg)
 
-The theme chosen is based on the hacking terminals within the Bethesda game series Fallout. "Fallout", "Nuka Cola" the Pip Boy graphic and all related intelectual properties are copyright of Bethesda Games.
+The theme chosen is based on the hacking terminals within the Bethesda game series Fallout. "Fallout", "Nuka Cola" the Pip Boy graphic and all related intellectual properties are copyright of Bethesda Games.
 
 #### other than images/names that are copyright Bethesda, all code is copyright Alysson Campbell 2018
 
