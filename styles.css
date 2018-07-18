@@ -1,72 +1,69 @@
-/* TODO: add backup fonts "Courier New", monospace; */
-
 @font-face {
-    font-family: fixedsys;
-    src: url(fonts/FSEX300.ttf);
+  font-family: fixedsys;
+  src: url(fonts/FSEX300.ttf);
 }
 
 body {
-    font-family: Fixedsys;
-    color: RGBA(0, 255, 102, .75);
-    font-size: 20px;
-    background-image: url("images/falloutbg.jpg");
-    background-size: cover;
-    background-position: center;
-    /* TODO: add text-transform: uppercase; */
+  font-family: Fixedsys, "Courier New", monospace;
+  color: RGBA(0, 255, 102, .75);
+  font-size: 20px;
+  background-image: url("images/falloutbg.jpg");
+  background-size: cover;
+  background-position: center;
+  text-transform: uppercase;
 }
 
-/*TODO: clean up CSS where needed*/
+button,
+input {
+  font-family: Fixedsys, "Courier New", monospace;
+  font-size: 20px;
+  text-align: center;
+  background: transparent;
+  color: RGBA(0, 255, 102, .75);
+  border: solid RGBA(0, 255, 102, .75) 1px;
+  text-transform: uppercase;
+}
 
 input {
-    font-family: Fixedsys;
-    font-size: 20px;
-    text-align: center;
-    color: RGBA(0, 255, 102, .75);
-    background: transparent;
-    border: solid RGBA(0, 255, 102, .75) 1px;
-    width: 50px;
-    margin-left: 5px;
-}
-
-button {
-    font-family: Fixedsys;
-    font-size: 20px;
-    text-align: center;
-    background: transparent;
-    color: RGBA(0, 255, 102, .75);
-    border: solid RGBA(0, 255, 102, .75) 1px;
+  width: 50px;
+  margin-left: 5px;
 }
 
 .letters {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .letter-display {
-    vertical-align: top;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    text-align: center;
-    background: RGBA(0, 255, 102, .75);
-    color: rgb(0, 29, 4);
+  vertical-align: top;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  text-align: center;
+  background: RGBA(0, 255, 102, .75);
+  color: rgb(0, 29, 4);
+}
+
+.wrong {
+  margin-left: 5px;
+  padding-top: 10px;
 }
 
 .wrong-letter {
-    display: inline-block;
-    margin-left: 10px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 img {
-    height: 30%;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    opacity: 0.75;
+  height: 30%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0.75;
 }
 
 p {
-    display: inline-block;
-    text-align: left;
+  display: inline-block;
+  text-align: left;
 }

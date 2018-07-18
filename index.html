@@ -2,135 +2,134 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Guess the Password!</title>
-    <link href="https://fonts.googleapis.com/css?family=Cute+Font" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Guess the Password!</title>
+  <link href="https://fonts.googleapis.com/css?family=Cute+Font" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<!-- TODO:change id's/classes if only used by css to class and id's only for js -->
 
 <body>
-    <h1>robco industries (tm) termlink protocall</h1>
-    <h2>enter password now...</h2>
-    <div class="attempt" id="attempt">
-        attempt(s) left:
-        <div id="number">6</div>
-        <div class="letters" id="letterSpace"></div>
+  <h1>robco industries (tm) termlink protocall</h1>
+  <h2>enter password now...</h2>
+  <div class="attempt">
+    attempt(s) left:
+    <div id="number">6</div>
+    <div class="letters"></div>
 
-        <div class="guess">
-            <input type="text" id="guess">
-            <button id="letter-guess">enter</button>
-        </div>
+    <div class="guess">
+      <input type="text" id="guess">
+      <button id="letter-guess">enter</button>
     </div>
+  </div>
 
-    <div class="wrong" id="wrongLetters">wrong letters already guessed:</div>
+  <div class="wrong" id="wrongLetters">wrong letters already guessed:</div>
 
-    <!-- TODO:Possibly make a code to generate strings to use for this?? & remove br's -->
-    <p>
-        <br> 0xF670 ^{_}/)/('(/]
-        <br> 0xF67C [>}} FALLOU]
-        <br> 0xF688 [.[],)_|=*^
-        <br> 0xF694 . *+@?:=]{SE
-        <br> 0xF6A0 LLING/]\ \[$/
-        <br> 0xF6AC CURRENT=']_#
-        <br> 0xF6B8 "}.&BARRENS*
-        <br> 0xF6C4 {*%@}-/;;.>=
-        <br> 0xF6D0 ?;;{$ *##;*!!
-        <br> 0xF6DC '-;"@>>[#{*^
-        <br> 0xF6E8 %{#|,=(\)/||
-        <br> 0xF6F4 ",!"[?__@,
-        <br> 0xF700 %",/|/;[*'()
-        <br> 0xF70C ";@"-%'[ ##;$
-        <br> 0xF718 ROBOT\^[>]{
-        <br> 0xF724 }*_!=:=BARIC
-        <br> 0xF730 ADE|"-!.%(!'
-        <br> 0xF73C $}FALLING;\ %
-        <br> 0xF748 *$$$#[_>=$#R
-        <br> 0xF6F4 ",!"[?__@,
-        <br> 0xF700 %",/|/;[*'()
-        <br> 0xF754 ANKING:+*{@&
-    </p>
-    <p>
-        <br> 0xF778 =|:#,_$/$[[
-        <br> 0xF784 ;*>[;/()@):]
-        <br> 0xF7FC /=(^._.^)=}[
-        <br> 0xF70C ";@"-%'[ ##;$
-        <br> 0xF718 ROBOT\^[>]{
-        <br> 0xF724 }*_!=:=BARIC
-        <br> 0xF730 ADE|"-!.%(!'
-        <br> 0xF73C $}FALLING;\ %
-        <br> 0xF748 *$$$#[_>=$#R
-        <br> 0xF754 ANKING:+*{@&
-        <br> 0xF7C0 '{?.:[,!/?[:
-        <br> 0xF6F4 ",!"[?__@,
-        <br> 0xF700 %",/|/;[*'()
-        <br> 0xF70C ";@"-%'[ ##;$
-        <br> 0xF718 ROBOT\^[>]{
-        <br> 0xF724 }*_!=:=BARIC
-        <br> 0xF730 ADE|"-!.%(!'
-        <br> 0xF73C $}FALLING;\ %
-        <br> 0xF748 *$$$#[_>=$#R
-        <br> 0xF6F4 ",!"[?__@,
-        <br> 0xF700 %",/|/;[*'()
-        <br> 0xF754 ANKING:+*{@&
-    </p>
-    <p>
-        <br> 0xF778 =|:#,_$/$[[
-        <br> 0xF784 ;*>[;/()@):]
-        <br> 0xF7FC /=(^._.^)=}[
-        <br> 0xF70C ";@"-%'[ ##;$
-        <br> 0xF718 ROBOT\^[>]{
-        <br> 0xF724 }*_!=:=BARIC
-        <br> 0xF730 ADE|"-!.%(!'
-        <br> 0xF73C $}FALLING;\ %
-        <br> 0xF748 *$$$#[_>=$#R
-        <br> 0xF754 ANKING:+*{@&
-        <br> 0xF7C0 '{?.:[,!/?[:
-        <br> 0xF670 ^{_}/)/('(/]
-        <br> 0xF67C [>}} FALLOU]
-        <br> 0xF688 [.[],)_|=*^
-        <br> 0xF694 . *+@?:=]{SE
-        <br> 0xF6A0 LLING/]\ \[$/
-        <br> 0xF6AC CURRENT=']_#
-        <br> 0xF6B8 "}.&BARRENS*
-        <br> 0xF6C4 {*%@}-/;;.>=
-        <br> 0xF6D0 ?;;{$ *##;*!!
-        <br> 0xF6DC '-;"@>>[#{*^
-        <br> 0xF6E8 %{#|,=(\)/||
-    </p>
-    <p>
-        <br> 0xF778 =|:#,_$/$[[
-        <br> 0xF784 ;*>[;/()@):]
-        <br> 0xF7FC /=(^._.^)=}[
-        <br> 0xF70C ";@"-%'[ ##;$
-        <br> 0xF718 ROBOT\^[>]{
-        <br> 0xF724 }*_!=:=BARIC
-        <br> 0xF730 ADE|"-!.%(!'
-        <br> 0xF73C $}FALLING;\ %
-        <br> 0xF748 *$$$#[_>=$#R
-        <br> 0xF754 ANKING:+*{@&
-        <br> 0xF7C0 '{?.:[,!/?[:
-        <br> 0xF6F4 ",!"[?__@,
-        <br> 0xF700 %",/|/;[*'()
-        <br> 0xF70C ";@"-%'[ ##;$
-        <br> 0xF718 ROBOT\^[>]{
-        <br> 0xF724 }*_!=:=BARIC
-        <br> 0xF730 ADE|"-!.%(!'
-        <br> 0xF73C $}FALLING;\ %
-        <br> 0xF748 *$$$#[_>=$#R
-        <br> 0xF6F4 ",!"[?__@,
-        <br> 0xF700 %",/|/;[*'()
-        <br> 0xF754 ANKING:+*{@&
-    </p>
+  <!-- TODO:Possibly make a code to generate strings to use for this?? & remove br's -->
+  <p>
+    <br> 0xF670 ^{_}/)/('(/]
+    <br> 0xF67C [>}} FALLOU]
+    <br> 0xF688 [.[],)_|=*^
+    <br> 0xF694 . *+@?:=]{SE
+    <br> 0xF6A0 LLING/]\ \[$/
+    <br> 0xF6AC CURRENT=']_#
+    <br> 0xF6B8 "}.&BARRENS*
+    <br> 0xF6C4 {*%@}-/;;.>=
+    <br> 0xF6D0 ?;;{$ *##;*!!
+    <br> 0xF6DC '-;"@>>[#{*^
+    <br> 0xF6E8 %{#|,=(\)/||
+    <br> 0xF6F4 ",!"[?__@,
+    <br> 0xF700 %",/|/;[*'()
+    <br> 0xF70C ";@"-%'[ ##;$
+    <br> 0xF718 ROBOT\^[>]{
+    <br> 0xF724 }*_!=:=BARIC
+    <br> 0xF730 ADE|"-!.%(!'
+    <br> 0xF73C $}FALLING;\ %
+    <br> 0xF748 *$$$#[_>=$#R
+    <br> 0xF6F4 ",!"[?__@,
+    <br> 0xF700 %",/|/;[*'()
+    <br> 0xF754 ANKING:+*{@&
+  </p>
+  <p>
+    <br> 0xF778 =|:#,_$/$[[
+    <br> 0xF784 ;*>[;/()@):]
+    <br> 0xF7FC /=(^._.^)=}[
+    <br> 0xF70C ";@"-%'[ ##;$
+    <br> 0xF718 ROBOT\^[>]{
+    <br> 0xF724 }*_!=:=BARIC
+    <br> 0xF730 ADE|"-!.%(!'
+    <br> 0xF73C $}FALLING;\ %
+    <br> 0xF748 *$$$#[_>=$#R
+    <br> 0xF754 ANKING:+*{@&
+    <br> 0xF7C0 '{?.:[,!/?[:
+    <br> 0xF6F4 ",!"[?__@,
+    <br> 0xF700 %",/|/;[*'()
+    <br> 0xF70C ";@"-%'[ ##;$
+    <br> 0xF718 ROBOT\^[>]{
+    <br> 0xF724 }*_!=:=BARIC
+    <br> 0xF730 ADE|"-!.%(!'
+    <br> 0xF73C $}FALLING;\ %
+    <br> 0xF748 *$$$#[_>=$#R
+    <br> 0xF6F4 ",!"[?__@,
+    <br> 0xF700 %",/|/;[*'()
+    <br> 0xF754 ANKING:+*{@&
+  </p>
+  <p>
+    <br> 0xF778 =|:#,_$/$[[
+    <br> 0xF784 ;*>[;/()@):]
+    <br> 0xF7FC /=(^._.^)=}[
+    <br> 0xF70C ";@"-%'[ ##;$
+    <br> 0xF718 ROBOT\^[>]{
+    <br> 0xF724 }*_!=:=BARIC
+    <br> 0xF730 ADE|"-!.%(!'
+    <br> 0xF73C $}FALLING;\ %
+    <br> 0xF748 *$$$#[_>=$#R
+    <br> 0xF754 ANKING:+*{@&
+    <br> 0xF7C0 '{?.:[,!/?[:
+    <br> 0xF670 ^{_}/)/('(/]
+    <br> 0xF67C [>}} FALLOU]
+    <br> 0xF688 [.[],)_|=*^
+    <br> 0xF694 . *+@?:=]{SE
+    <br> 0xF6A0 LLING/]\ \[$/
+    <br> 0xF6AC CURRENT=']_#
+    <br> 0xF6B8 "}.&BARRENS*
+    <br> 0xF6C4 {*%@}-/;;.>=
+    <br> 0xF6D0 ?;;{$ *##;*!!
+    <br> 0xF6DC '-;"@>>[#{*^
+    <br> 0xF6E8 %{#|,=(\)/||
+  </p>
+  <p>
+    <br> 0xF778 =|:#,_$/$[[
+    <br> 0xF784 ;*>[;/()@):]
+    <br> 0xF7FC /=(^._.^)=}[
+    <br> 0xF70C ";@"-%'[ ##;$
+    <br> 0xF718 ROBOT\^[>]{
+    <br> 0xF724 }*_!=:=BARIC
+    <br> 0xF730 ADE|"-!.%(!'
+    <br> 0xF73C $}FALLING;\ %
+    <br> 0xF748 *$$$#[_>=$#R
+    <br> 0xF754 ANKING:+*{@&
+    <br> 0xF7C0 '{?.:[,!/?[:
+    <br> 0xF6F4 ",!"[?__@,
+    <br> 0xF700 %",/|/;[*'()
+    <br> 0xF70C ";@"-%'[ ##;$
+    <br> 0xF718 ROBOT\^[>]{
+    <br> 0xF724 }*_!=:=BARIC
+    <br> 0xF730 ADE|"-!.%(!'
+    <br> 0xF73C $}FALLING;\ %
+    <br> 0xF748 *$$$#[_>=$#R
+    <br> 0xF6F4 ",!"[?__@,
+    <br> 0xF700 %",/|/;[*'()
+    <br> 0xF754 ANKING:+*{@&
+  </p>
 
-    <footer>
-        <img src="images/pip.png" alt="pipboy">
-    </footer>
-    <!-- TODO:decide if going to switch to jQuery, if not remove library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+  <footer>
+    <img src="images/pip.png" alt="pipboy">
+  </footer>
+  <!-- TODO:decide if going to switch to jQuery, if not remove library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="main.js"></script>
 
 </body>
 

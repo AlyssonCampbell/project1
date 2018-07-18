@@ -44,6 +44,7 @@ for (let index = 0; index < letterArray.length; index++) {
   boxes.innerText = "";
 }
 
+//TODO:make the input not function if empty array & convert to lowercase
 //event listener to submit the user guess
 //have validation entered to make letters into uppercase
 guessLetter.addEventListener("click", evt => {
