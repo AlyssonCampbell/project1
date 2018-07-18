@@ -1,3 +1,5 @@
+/* TODO: add backup fonts "Courier New", monospace; */
+
 @font-face {
     font-family: fixedsys;
     src: url(fonts/FSEX300.ttf);
@@ -10,7 +12,10 @@ body {
     background-image: url("images/falloutbg.jpg");
     background-size: cover;
     background-position: center;
+    /* TODO: add text-transform: uppercase; */
 }
+
+/*TODO: clean up CSS where needed*/
 
 input {
     font-family: Fixedsys;

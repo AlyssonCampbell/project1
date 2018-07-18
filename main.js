@@ -1,5 +1,6 @@
-console.log("javascript running & ready to code! :D");
-//make word bank with all words to choose from for password
+//TODO:See if the js files can be split
+//TODO:update all the comments to be simplier and clearer
+//TODO:possibly switch to jQuery?
 let wordBank = [
   "password",
   "wasteland",
@@ -14,31 +15,28 @@ let wordBank = [
   "mentat"
 ];
 
-//set an array with the word(s) that will be guessed
-// Make an array of words
-// Make another array for the selected word broken into just letters
-//create an input field and a button to submit a guess from the user
+//TODO: Minimize the number of global variables
 let guesses = [];
 let letterArray = [];
 let totalScore = [0];
 let indices = [];
 let wrongLetters = [];
 let wrongAnswers = [6];
-
 let wordArray = [wordBank[Math.floor(Math.random() * wordBank.length)]];
+const button = document.querySelector("button");
+const guessLetter = document.querySelector("#letter-guess");
+const letterDisplay = document.querySelector(".letters");
+//TODO: Get rid of unneeded console.logs
+//WordArray console log is being left in so the array can be logged easily for testing
+//console.log("word array", wordArray);
 
-console.log("word array", wordArray);
-
-//create function to pick a word from the word array, then split it into
-//a new array with each character separated
+//function to split the randomly selected word into individual letters
 function makeLetterArray(wordArray) {
   letterArray = wordArray.split("");
 }
 makeLetterArray(wordArray[0]);
 
-//Run a for loop to generate boxes for the game
-//pieces based on the array length of the word chosen
-const letterDisplay = document.querySelector(".letters");
+//TODO:put this in a function?
 for (let index = 0; index < letterArray.length; index++) {
   let boxes = document.createElement("div");
   boxes.setAttribute("class", "letter-display");
@@ -46,20 +44,11 @@ for (let index = 0; index < letterArray.length; index++) {
   boxes.innerText = "";
 }
 
-//create array to display the incorrect letters input
-//using similar code from the letter displau
-
-//create event listenener for when submit button is clicked-input the letter input
-//into the guesses array
-//don't need to store the guesses within the array since each letter will be compared indivudually
-//moved function within the check letter function to run at same time so it could
-//use the same words
-
-const button = document.querySelector("button");
-const guessLetter = document.querySelector("#letter-guess");
-
+//event listener to submit the user guess
+//have validation entered to make letters into uppercase
 guessLetter.addEventListener("click", evt => {
   evt.preventDefault();
+  //TODO:Make the guesses into it's own function
   guesses.pop(guess.value);
   guesses.push(guess.value);
   checkLetter(letterArray, guesses);
@@ -67,6 +56,7 @@ guessLetter.addEventListener("click", evt => {
 });
 
 //compare each input with all of the letters within the string in the array
+//TODO: reduce the size of the checkLetter function
 function checkLetter() {
   console.log("this is the letter array", letterArray);
   if (letterArray.includes(guesses[0]) == false) {
