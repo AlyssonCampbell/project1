@@ -1,7 +1,7 @@
 "use strict";
 
 const guessLetter = document.querySelector("#letter-guess");
-
+//TODO:see if any of these global variables can be reduced
 let guesses = [];
 let totalScore = 0;
 let wrongAnswers = 6;
@@ -10,25 +10,34 @@ let wrongLetters = [];
 
 //TODO:Improvements:make the input not function if empty array & convert to lowercase
 //TODO:Improvements:have validation entered to make letters into uppercase
-//TODO:Improvements:don't accept blank or already input letters
+//TODO:Improvements:don't accept already input letters
 
 //event listener to submit the user guess
 guessLetter.addEventListener("click", evt => {
-  evt.preventDefault();
-  getLetter();
-  searchWord();
-  wrongLetter(wrongAnswers);
-  lost(wrongAnswers);
-  win();
+  if (guess.value !== "") {
+    evt.preventDefault();
+    getLetter();
+    searchWord();
+    lost(wrongAnswers);
+    win();
+  } else {
+    console.log("enter an input!");
+  }
 });
 
 //function to get and store the letter
 function getLetter() {
-  guesses.pop(guess.value);
-  guesses.push(guess.value);
+  storeLetter();
   checkLetter(letterArray, guesses);
+  wrongLetter(wrongAnswers);
   //resets the input field back to blank instead of keeping input letter
   document.getElementById("guess").value = "";
+};
+
+//stores the letter input
+function storeLetter() {
+  guesses.pop(guess.value);
+  guesses.push(guess.value);
 };
 
 //compare each input with all of the letters within the string in the array
