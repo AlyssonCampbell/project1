@@ -2,9 +2,13 @@
 
 const guessLetter = document.querySelector("#letter-guess");
 //TODO:see if any of these global variables can be reduced
+let score = {
+  totalScore: 0,
+  wrongAnswers: 6
+}
+// let totalScore = 0;
+// let wrongAnswers = 6;
 let guesses = [];
-let totalScore = 0;
-let wrongAnswers = 6;
 let letterPosition = [];
 let wrongLetters = [];
 
@@ -18,7 +22,7 @@ guessLetter.addEventListener("click", evt => {
     evt.preventDefault();
     getLetter();
     searchWord();
-    lost(wrongAnswers);
+    lost(score.wrongAnswers);
     win();
   } else {
     console.log("enter an input!");
@@ -29,7 +33,7 @@ guessLetter.addEventListener("click", evt => {
 function getLetter() {
   storeLetter();
   checkLetter(letterArray, guesses);
-  wrongLetter(wrongAnswers);
+  wrongLetter(score.wrongAnswers);
   //resets the input field back to blank instead of keeping input letter
   document.getElementById("guess").value = "";
 };
@@ -50,7 +54,7 @@ function checkLetter() {
 
 //tracks the incorrect guessed letters
 function storeWrong() {
-  wrongAnswers = parseInt(wrongAnswers - 1);
+  score.wrongAnswers = parseInt(score.wrongAnswers - 1);
   wrongLetters.pop(guesses[0]);
   wrongLetters.push(guesses[0]);
 };
@@ -67,7 +71,7 @@ function showWrong() {
 function searchWord() {
   for (let i in letterArray) {
     if (guesses[0] === letterArray[i]) {
-      totalScore = parseInt(totalScore + 1);
+      score.totalScore = parseInt(score.totalScore + 1);
       storeIndex(i);
       showLetter();
     };
@@ -90,12 +94,12 @@ function showLetter() {
 //count down the number of wrong guesses
 function wrongLetter(wrongAnswers) {
   let countdown = document.getElementById("number");
-  countdown.innerText = wrongAnswers;
+  countdown.innerText = score.wrongAnswers;
 };
 
 //display if won
 function win() {
-  if (totalScore === letterArray.length) {
+  if (score.totalScore === letterArray.length) {
     let message = ("ADMIN ACCESS GRANTED!");
     gameOver(message)
   };
@@ -103,7 +107,7 @@ function win() {
 
 //if the attempts left hits 0 and user lost
 function lost() {
-  if (wrongAnswers === 0) {
+  if (score.wrongAnswers === 0) {
     let message = ("UNAUTHORIZED USER DETECTED! SYSTEM RESETTING...");
     gameOver(message)
   };
