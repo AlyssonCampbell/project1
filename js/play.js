@@ -1,16 +1,16 @@
 "use strict";
 
 const guessLetter = document.querySelector("#letter-guess");
-//TODO:see if any of these global variables can be reduced
+
 let score = {
   totalScore: 0,
   wrongAnswers: 6
-}
-// let totalScore = 0;
-// let wrongAnswers = 6;
-let guesses = [];
-let letterPosition = [];
-let wrongLetters = [];
+};
+let letters = {
+  guesses: [],
+  letterPosition: [],
+  wrongLetters: []
+};
 
 //TODO:Improvements:make the input not function if empty array & convert to lowercase
 //TODO:Improvements:have validation entered to make letters into uppercase
@@ -32,7 +32,7 @@ guessLetter.addEventListener("click", evt => {
 //function to get and store the letter
 function getLetter() {
   storeLetter();
-  checkLetter(letterArray, guesses);
+  checkLetter(letterArray);
   wrongLetter(score.wrongAnswers);
   //resets the input field back to blank instead of keeping input letter
   document.getElementById("guess").value = "";
@@ -40,13 +40,13 @@ function getLetter() {
 
 //stores the letter input
 function storeLetter() {
-  guesses.pop(guess.value);
-  guesses.push(guess.value);
+  letters.guesses.pop(guess.value);
+  letters.guesses.push(guess.value);
 };
 
 //compare each input with all of the letters within the string in the array
 function checkLetter() {
-  if (letterArray.includes(guesses[0]) == false) {
+  if (letterArray.includes(letters.guesses[0]) == false) {
     storeWrong();
     showWrong();
   };
@@ -54,9 +54,9 @@ function checkLetter() {
 
 //tracks the incorrect guessed letters
 function storeWrong() {
-  score.wrongAnswers = parseInt(score.wrongAnswers - 1);
-  wrongLetters.pop(guesses[0]);
-  wrongLetters.push(guesses[0]);
+  score.wrongAnswers = parseInt(score.wrongAnswers -1);
+  letters.wrongLetters.pop(letters.guesses[0]);
+  letters.wrongLetters.push(letters.guesses[0]);
 };
 
 //displays wrong guesses on screen
@@ -64,31 +64,31 @@ function showWrong() {
   let incorrect = document.createElement("div");
   incorrect.setAttribute("class", "wrong-letter");
   document.querySelector(".wrong").appendChild(incorrect);
-  incorrect.innerText = wrongLetters;
+  incorrect.innerText = letters.wrongLetters;
 };
 
 //compares the input letter against all of the letters within the word being guessed
 function searchWord() {
   for (let i in letterArray) {
-    if (guesses[0] === letterArray[i]) {
-      score.totalScore = parseInt(score.totalScore + 1);
-      storeIndex(i);
-      showLetter();
+    if (letters.guesses[0] === letterArray[i]) {
+      score.totalScore = parseInt(score.totalScore +1);
+      storeIndex(i, letters.guesses);
+      showLetter(letters.guesses);
     };
   };
 };
 
 //stores the index position of the letter if the user guesses a letter in the word
 function storeIndex(i) {
-  letterArray[i] === guesses;
-  letterPosition.pop(i);
-  letterPosition.push(i);
+  letterArray[i] === letters.guesses;
+  letters.letterPosition.pop(i);
+  letters.letterPosition.push(i);
 };
 
 //displays the letter within the box when guessed correctly
 function showLetter() {
-  let blanks = document.getElementsByClassName("letter-display")[letterPosition];
-  blanks.innerText = guesses;
+  let blanks = document.getElementsByClassName("letter-display")[letters.letterPosition];
+  blanks.innerText = letters.guesses;
 };
 
 //count down the number of wrong guesses
